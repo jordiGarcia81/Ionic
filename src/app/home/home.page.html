@@ -10,7 +10,7 @@
   <ion-input>
     
   <!-- Input with placeholder -->
-  <ion-input placeholder="Insertar producto"></ion-input>
+  <ion-input placeholder="Insertar producto" [(ngModel)]=" producto" ></ion-input>
   
   
 </ion-input>
@@ -19,18 +19,18 @@
 </ion-item>
   
 <ion-item>
-  <ion-label>Nombre: </ion-label>
-  <ion-input></ion-input>
+  <ion-label>Nombre: {{nombre}}</ion-label>
+  <ion-input [(ngModel)]=" nombre" ></ion-input>
 </ion-item>
   
 <ion-item>
-  <ion-label>Descripción: </ion-label>
-  <ion-input></ion-input>
+  <ion-label>Descripción: {{descripcion}}</ion-label>
+  <ion-input  [(ngModel)]=" descripcion"></ion-input>
 </ion-item>
 <ion-item>
 
-  <ion-label >Precio: </ion-label>
-  <ion-input type="number" value="0"></ion-input>
+  <ion-label >Precio: {{Precio}}</ion-label>
+  <ion-input  placeholder="0" [(ngModel)]=" precio" type="number" value="0"></ion-input>
 </ion-item>
 
 
@@ -57,10 +57,10 @@
   <div *ngIf = "oculto == false">
   <ion-list>
     <ion-item>
-      <ion-label>Tipo</ion-label>
-      <ion-select placeholder="Select One">
-        <ion-select-option value="Coche">Coche</ion-select-option>
-        <ion-select-option value="Moto">Moto</ion-select-option>
+      <ion-label>Tipo {{Tipo}}</ion-label>
+      <ion-select [(ngModel)]="tipo" placeholder="Select One">
+        <ion-select-option [(ngModel)]="tipo"value="Coche">Coche</ion-select-option>
+        <ion-select-option [(ngModel)]="tipo"value="Moto">Moto</ion-select-option>
       </ion-select>
     </ion-item>
   
@@ -68,10 +68,10 @@
 
     <ion-item>
 
-      <ion-label >Km: </ion-label>
-      <ion-input type="number" value="0"></ion-input>
+      <ion-label >Km: {{Km}}</ion-label>
+      <ion-input [(ngModel)]="km" placeholder="0" type="number" value="0"></ion-input>
     </ion-item>
-    <ion-datetime value="2019-10-01T15:43:40.394Z" display-timezone="utc"></ion-datetime>
+    <ion-datetime  value="2019-10-01T15:43:40.394Z" display-timezone="utc" >Fecha: {{Fecha}}</ion-datetime>
   </ion-list>
   </div>
   <ion-item-divider>
@@ -83,26 +83,28 @@
 <ion-list>
   <ion-item>
 
-    <ion-label >m2 de la vivienda: </ion-label>
-    <ion-input type="number" value="0"></ion-input>
+    <ion-label >m2 de la vivienda: {{M2}} </ion-label>
+    <ion-input [(ngModel)]="m2" placeholder="0" type="number" value="0"></ion-input>
 
   </ion-item>
   <ion-item>
 
-  <ion-label >Numero de Baños: </ion-label>
-    <ion-input type="number" value="0"></ion-input>
+  <ion-label >Numero de Baños: {{Banyos}}</ion-label>
+    <ion-input [(ngModel)]="banyos" placeholder="0" type="number" value="0"></ion-input>
 
   </ion-item>
 
   <ion-item>
 
-  <ion-label >Numero de Habitaciones: </ion-label>
-    <ion-input type="number" value="0"></ion-input>
+  
+    <ion-label >Numero de Habitaciones: {{Habitaciones}}</ion-label>
+    <ion-input [(ngModel)]="habitaciones" placeholder="0" type="number" value="0"></ion-input>
+
 
   </ion-item>
   <ion-item>
-    <ion-label>Localidad: </ion-label>
-    <ion-input></ion-input>
+    <ion-label>Localidad: {{Localidad}}</ion-label>
+    <ion-input [(ngModel)]="localidad"></ion-input>
   </ion-item>
 </ion-list>
   </div>
@@ -115,10 +117,10 @@
   <div *ngIf = "oculto == false">
 <ion-list>
   <ion-item>
-    <ion-label>Estado del Producto</ion-label>
-    <ion-select placeholder="Select One">
-      <ion-select-option value="Perfecto Estado">Perfecto Estado</ion-select-option>
-      <ion-select-option value="Usado">Usado</ion-select-option>
+    <ion-label>Estado del Producto {{Estado}}</ion-label>
+    <ion-select [(ngModel)]="estado" placeholder="Select One">
+      <ion-select-option [(ngModel)]="estado" value="Perfecto Estado">Perfecto Estado</ion-select-option>
+      <ion-select-option [(ngModel)]="estado" value="Usado">Usado</ion-select-option>
     </ion-select>
   </ion-item>
 </ion-list>
@@ -126,6 +128,33 @@
 
 </ion-list>
 
-<ion-button expand="block" (click)="cambiar_oculto()">{{info}} Producto</ion-button>
+<ion-button expand="block" (click)="cambiar_oculto()" (click)="insertar()">{{info}} Producto</ion-button>
 
+<ion-card *ngFor="let item of productos">
+  <ion-card-header>
+    
+    <ion-card-title>Nombre {{item.Nombre}}  ({{item.Precio}}) €</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-label>Descripcion: {{item.Descripcion}}</ion-label>
+    
+  </ion-card-content>
+  <ion-card-content>
+    <ion-label>Categoria Motor: tipo: {{item.Tipo}}, km: {{item.Km}}, fecha: {{item.Fecha}}</ion-label>
+    
+  </ion-card-content>
+
+  <ion-card-content>
+    <ion-label>Categoria Inmobiliaria: {{item.M2}} m2, numero de baños:  {{item.Banyos}}, numero de habitaciones: {{item.Habitaciones}},  localidad: {{item.Localidad}} </ion-label>
+    
+  </ion-card-content>
+  
+  <ion-card-content>
+    <ion-label>Categoria Tecnologia: estado: {{item.Estado}} </ion-label>
+    
+  </ion-card-content>
+
+  </ion-card>
+
+  
 </ion-content>
