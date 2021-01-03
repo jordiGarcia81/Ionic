@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IInmobiliaria, IMotor, Iproducto, ITecnologia } from './interfaces';
 import { ToastController } from '@ionic/angular';
+import { ProductoService } from '../services/producto.Service';
 
 @Component({
   selector: 'app-home',
@@ -29,26 +30,11 @@ export class HomePage {
   habitaciones:number;
   localidad:string;
   estado:string;
-  productos: (Iproducto | IMotor| IInmobiliaria| ITecnologia)[]=[
-    {
-      "id": 1,
-      "Nombre": "iPhone 12 pro",
-      "Descripcion" : "Tecnología 5G. Chip A14 Bionic, el más veloz en un smartphone. Pantalla OLED de borde a borde. Ceramic Shield, cuatro veces más resistente a las caídas",
-      "Precio": 1100,
-      
-
-      
-    },
-    {
-      "id": 2,
-      "Nombre": "TV LED 65 Samsung" ,
-      "Descripcion" : "Smart TV, 4K Real y HDR10+, Compatible Asistentes de Voz, Tap View",
-      "Precio": 699
-    }
-
-  ];
-
-  constructor(private _toastCtrl : ToastController) {}
+  productos: (Iproducto | IMotor| IInmobiliaria| ITecnologia)[];
+ 
+  constructor(private _toastCtrl : ToastController ,private _productoService:ProductoService) {
+    
+  }
   cambiar_oculto():void{
     this.oculto = !this.oculto;
     if(this.oculto==true){
@@ -67,6 +53,9 @@ export class HomePage {
     toast.present();
   }
 
+  ngOnInit(){
+  this.productos=this._productoService.getProductos();
+  }
 
   insertar(){
     this.productos.push({"id":this.productos.length+1,
