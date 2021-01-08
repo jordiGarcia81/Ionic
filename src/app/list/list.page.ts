@@ -1,20 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IInmobiliaria, IMotor, Iproducto, ITecnologia } from './interfaces';
 import { ToastController } from '@ionic/angular';
+import { ProductoService } from '../services/producto.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-list',
+  templateUrl: './list.page.html',
+  styleUrls: ['./list.page.scss'],
 })
-export class HomePage {
+export class ListPage  {
 
   oculto: boolean = false;
-  categoria1 : string = "Motor";
-  categoria2 : string = "Inmobiliaria";
-  categoria3 : string = "Tecnologia";
-  ruta : string = "https://plazbuy.com/dist/img_app/productos-plazbuy.png";
-  width=400;
+ 
  
   info : string = "Guardar";
   producto : string;
@@ -29,6 +26,7 @@ export class HomePage {
   habitaciones:number;
   localidad:string;
   estado:string;
+
   productos: (Iproducto | IMotor| IInmobiliaria| ITecnologia)[]=[
     {
       "id": 1,
@@ -47,8 +45,7 @@ export class HomePage {
     }
 
   ];
-
-  constructor(private _toastCtrl : ToastController) {}
+  constructor(private _toastCtrl : ToastController,private _productoService:ProductoService) {}
   cambiar_oculto():void{
     this.oculto = !this.oculto;
     if(this.oculto==true){
@@ -68,7 +65,7 @@ export class HomePage {
   }
 
   ngOnInit(){
-    console.log("entro en ngOnInit")
+    this.productos=this._productoService.getProductos();
     }
   insertar(){
     this.productos.push({"id":this.productos.length+1,

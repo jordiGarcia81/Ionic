@@ -1,0 +1,133 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Insert</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-input>
+    
+  <!-- Input with placeholder -->
+  <ion-input placeholder="Insertar producto" [(ngModel)]=" producto" ></ion-input>
+  
+  
+</ion-input>
+<ion-item>
+  <img [src]="ruta"[style.width.px]="width">
+</ion-item>
+  
+<ion-item>
+  <ion-label>Nombre: {{nombre}}</ion-label>
+  <ion-input [(ngModel)]=" nombre" ></ion-input>
+</ion-item>
+  
+<ion-item>
+  <ion-label>Descripción: {{descripcion}}</ion-label>
+  <ion-input  [(ngModel)]=" descripcion"></ion-input>
+</ion-item>
+<ion-item>
+
+  <ion-label >Precio: {{Precio}}</ion-label>
+  <ion-input  placeholder="0" [(ngModel)]=" precio" type="number" value="0"></ion-input>
+</ion-item>
+
+
+
+<ion-item-divider>
+  <ion-label>
+    
+  </ion-label>
+</ion-item-divider>
+
+<ion-item-divider color="secondary">
+  <ion-label>
+    Categorias
+  </ion-label>
+</ion-item-divider>
+
+<!-- Item Dividers in a List -->
+<ion-list>
+  <ion-item-divider>
+    <ion-label>
+      {{categoria1}}
+    </ion-label>
+  </ion-item-divider>
+  <div *ngIf = "oculto == false">
+  <ion-list>
+    <ion-item>
+      <ion-label>Tipo {{Tipo}}</ion-label>
+      <ion-select [(ngModel)]="tipo" placeholder="Select One">
+        <ion-select-option [(ngModel)]="tipo"value="Coche">Coche</ion-select-option>
+        <ion-select-option [(ngModel)]="tipo"value="Moto">Moto</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    
+
+    <ion-item>
+
+      <ion-label >Km: {{Km}}</ion-label>
+      <ion-input [(ngModel)]="km" placeholder="0" type="number" value="0"></ion-input>
+    </ion-item>
+    <ion-datetime  value="2019-10-01T15:43:40.394Z" display-timezone="utc" >Fecha: {{Fecha}}</ion-datetime>
+  </ion-list>
+  </div>
+  <ion-item-divider>
+    <ion-label>
+      {{categoria2}}
+    </ion-label>
+  </ion-item-divider>
+  <div *ngIf = "oculto == false">
+<ion-list>
+  <ion-item>
+
+    <ion-label >m2 de la vivienda: {{M2}} </ion-label>
+    <ion-input [(ngModel)]="m2" placeholder="0" type="number" value="0"></ion-input>
+
+  </ion-item>
+  <ion-item>
+
+  <ion-label >Numero de Baños: {{Banyos}}</ion-label>
+    <ion-input [(ngModel)]="banyos" placeholder="0" type="number" value="0"></ion-input>
+
+  </ion-item>
+
+  <ion-item>
+
+  
+    <ion-label >Numero de Habitaciones: {{Habitaciones}}</ion-label>
+    <ion-input [(ngModel)]="habitaciones" placeholder="0" type="number" value="0"></ion-input>
+
+
+  </ion-item>
+  <ion-item>
+    <ion-label>Localidad: {{Localidad}}</ion-label>
+    <ion-input [(ngModel)]="localidad"></ion-input>
+  </ion-item>
+</ion-list>
+  </div>
+
+  <ion-item-divider>
+    <ion-label>
+      {{categoria3}}
+    </ion-label>
+  </ion-item-divider>
+  <div *ngIf = "oculto == false">
+<ion-list>
+  <ion-item>
+    <ion-label>Estado del Producto {{Estado}}</ion-label>
+    <ion-select [(ngModel)]="estado" placeholder="Select One">
+      <ion-select-option [(ngModel)]="estado" value="Perfecto Estado">Perfecto Estado</ion-select-option>
+      <ion-select-option [(ngModel)]="estado" value="Usado">Usado</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+  </div>
+
+</ion-list>
+
+<ion-button expand="block" (click)="cambiar_oculto()" (click)="insertar()">{{info}} Producto</ion-button>
+
+  
+</ion-content>
+

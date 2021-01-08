@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card *ngFor="let item of productos">
+    <ion-card-header>
+      
+      <ion-card-title>Nombre {{item.Nombre}}  ({{item.Precio}}) €</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label>Descripcion: {{item.Descripcion}}</ion-label>
+      
+    </ion-card-content>
+    <ion-card-content>
+      <ion-label>Categoria Motor: tipo: {{item.Tipo}}, km: {{item.Km}}, fecha: {{item.Fecha}}</ion-label>
+      
+    </ion-card-content>
+  
+    <ion-card-content>
+      <ion-label>Categoria Inmobiliaria: {{item.M2}} m2, numero de baños:  {{item.Banyos}}, numero de habitaciones: {{item.Habitaciones}},  localidad: {{item.Localidad}} </ion-label>
+      
+    </ion-card-content>
+    
+    <ion-card-content>
+      <ion-label>Categoria Tecnologia: estado: {{item.Estado}} </ion-label>
+      
+    </ion-card-content>
+    <ion-button expand="block" [routerLink]="['/details','item.id']" routerDirection="forward">Detalle</ion-button>
+    </ion-card>
+  
+</ion-content>

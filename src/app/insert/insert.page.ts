@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IInmobiliaria, IMotor, Iproducto, ITecnologia } from './interfaces';
 import { ToastController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-insert',
+  templateUrl: './insert.page.html',
+  styleUrls: ['./insert.page.scss'],
 })
-export class HomePage {
+export class InsertPage implements OnInit {
 
+  
   oculto: boolean = false;
   categoria1 : string = "Motor";
   categoria2 : string = "Inmobiliaria";
@@ -90,3 +91,4 @@ export class HomePage {
 console.log("se ha introducido un nuevo producto");
   }
 }
+
