@@ -29,8 +29,8 @@ export class ProductoService{
 
     }
 
-    getProducto(id:number): Iproducto{
-      return  this.productos.find(x=>x.id==id);
+    getProducto(Nombre : String): Iproducto{
+      return  this.productos.find(x=>x.Nombre==Nombre);
     }
 
     

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import { ToastController } from '@ionic/angular';
 import { ProductoService } from '../services/producto.service';
+import { IInmobiliaria, IMotor, Iproducto, ITecnologia } from '../home/interfaces';
 
 @Component({
   selector: 'app-details',
@@ -10,7 +11,7 @@ import { ProductoService } from '../services/producto.service';
 })
 export class DetailsPage implements OnInit {
  
- /* oculto: boolean = false;
+  oculto: boolean = false;
   categoria1 : string = "Motor";
   categoria2 : string = "Inmobiliaria";
   categoria3 : string = "Tecnologia";
@@ -47,17 +48,18 @@ export class DetailsPage implements OnInit {
       "Precio": 699
     }
 
-  ];*/
+  ];
 
   
-  id : number;
+  Nombre : String;
 
   constructor(private _activatedRoute : ActivatedRoute,private _productoService:ProductoService ) { }
 
   ngOnInit() {
-    this.id= +this._activatedRoute.snapshot.paramMap.get('id');
-    console.log("he recibido un "+this.id);
-    /*let res=this._productoService.getProducto(this.id);
+    this.Nombre= this._activatedRoute.snapshot.paramMap.get('Nombre');
+    console.log("he recibido un "+this.Nombre);
+    
+    /*let res=this._productoService.getProducto(this.Nombre);
     console.log("el nombre es "+res.Nombre);*/
   }
 

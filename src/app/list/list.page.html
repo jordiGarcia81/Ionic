@@ -5,11 +5,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-card>
+    
+  </ion-card>
 
-  <ion-card *ngFor="let item of productos">
+ <ion-card *ngFor="let item of productos">
     <ion-card-header>
       
       <ion-card-title>Nombre {{item.Nombre}}  ({{item.Precio}}) €</ion-card-title>
+     
     </ion-card-header>
     <ion-card-content>
       <ion-label>Descripcion: {{item.Descripcion}}</ion-label>
@@ -29,7 +33,7 @@
       <ion-label>Categoria Tecnologia: estado: {{item.Estado}} </ion-label>
       
     </ion-card-content>
-    <ion-button expand="block" [routerLink]="['/details','item.id']" routerDirection="forward">Detalle</ion-button>
+    <ion-button expand="block" [routerLink]="['/details','item.Nombre']" routerDirection="forward">Detalle</ion-button>
     </ion-card>
   
 </ion-content>

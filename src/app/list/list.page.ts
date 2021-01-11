@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IInmobiliaria, IMotor, Iproducto, ITecnologia } from './interfaces';
+import { IInmobiliaria, IMotor, Iproducto, ITecnologia } from '../home/interfaces';
 import { ToastController } from '@ionic/angular';
 import { ProductoService } from '../services/producto.service';
 
