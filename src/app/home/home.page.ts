@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IInmobiliaria, IMotor, Iproducto, ITecnologia } from './interfaces';
 import { ToastController } from '@ionic/angular';
+import { ProductoService } from '../services/producto.service';
+//import {MotorService} from '../services/motor.service';
 
 @Component({
   selector: 'app-home',
@@ -29,8 +31,9 @@ export class HomePage {
   habitaciones:number;
   localidad:string;
   estado:string;
-  productos: (Iproducto | IMotor| IInmobiliaria| ITecnologia)[]=[
-    {
+  productos: (Iproducto | IMotor| IInmobiliaria| ITecnologia)[]=[];
+  //motor: ( Iproducto | IMotor| IInmobiliaria| ITecnologia)[]=[];
+   /* {
       "id": 1,
       "Nombre": "iPhone 12 pro",
       "Descripcion" : "Tecnología 5G. Chip A14 Bionic, el más veloz en un smartphone. Pantalla OLED de borde a borde. Ceramic Shield, cuatro veces más resistente a las caídas",
@@ -46,9 +49,10 @@ export class HomePage {
       "Precio": 699
     }
 
-  ];
+  ];*/
 
-  constructor(private _toastCtrl : ToastController) {}
+  constructor(private _toastCtrl : ToastController,private _productoService : ProductoService) {}
+  
   cambiar_oculto():void{
     this.oculto = !this.oculto;
     if(this.oculto==true){
@@ -57,6 +61,7 @@ export class HomePage {
       this.info="Guardar";
     }
   }
+  
 
   async presentToast() {
     const toast = await this. _toastCtrl.create({
@@ -68,23 +73,42 @@ export class HomePage {
   }
 
   ngOnInit(){
-    console.log("entro en ngOnInit")
+    let ref = this._productoService.getProductos();
+    ref.on("value",snapshot => {
+      snapshot.forEach(child =>{
+        let value = child.val();
+        this.productos.push(value);
+        console.log("he encontrado "+child.val().Nombre)
+        console.log("he encontrado "+child.val().Precio)
+        console.log("he encontrado "+child.val().Descripcion)
+        
+      })
+    });
+    
     }
   insertar(){
-    this.productos.push({"id":this.productos.length+1,
+    let productos : Iproducto=
+      {"id":this.productos.length+1,
     "Nombre": this.nombre,
     "Descripcion": this.descripcion,
     "Precio":this.precio,
-    "Tipo":this.tipo,
-    "Km":this.km,
-    "Fecha":this.fecha,
-    "M2":this.m2,
-    "Banyos":this.banyos,
-    "Habitaciones":this.habitaciones,
-    "Localidad":this.localidad,
-    "Estado":this.estado
     
-  });
+    };
+   /* let motor: IMotor={
+      "id":this.productos.length+1,
+      "Nombre": this.nombre,
+      "Descripcion": this.descripcion,
+      "Precio":this.precio,
+      "Tipo":this.tipo,
+      "Km":this.km,
+      "Fecha":this.fecha
+    };*/
+   
+
+
+    this._productoService.setProducto(productos);
+    //this._motorService.setMotor(motor);
+  
   this.presentToast();
 
 console.log("se ha introducido un nuevo producto");
