@@ -24,3 +24,11 @@ export interface ITecnologia extends Iproducto{
     "Estado": string
     
 }
+
+export interface Iventas{
+        "id": number,
+        "Nombre": String,
+        "Descripcion" : string,
+        "Precio": number,
+        "estado":String,
+}

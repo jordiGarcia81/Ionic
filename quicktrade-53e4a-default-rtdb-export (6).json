@@ -1,6 +1,13 @@
-
-
 {
+  "Mis_Envios" : {
+    "producto1" : {
+      "descripcion" : "asus",
+      "estado" : "nuevo",
+      "id" : 1,
+      "nombre" : "ordenador",
+      "precio" : 600
+    }
+  },
   "Mis_Ventas" : {
     "producto1" : {
       "descripcion" : "asus",
