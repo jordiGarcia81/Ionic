@@ -65,7 +65,7 @@ export class ListPage  {
   }
 
   ngOnInit(){
-    this.productos=this._productoService.getProductos();
+    //this.productos=this._productoService.getProductos();
     }
   insertar(){
     this.productos.push({"id":this.productos.length+1,

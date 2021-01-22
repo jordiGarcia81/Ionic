@@ -13,6 +13,14 @@ export const environment = {
     appId: "1:924881049167:web:ab4d4f5dd5437532677c3a",
     measurementId: "G-6XYW7GP8E4"
   }
+  /*firebaseConfig : {
+    apiKey: "AIzaSyCgCmSlo7oBWLC45GmjadPfFUdmzmGvfBI",
+    authDomain: "productos-21e47.firebaseapp.com",
+    projectId: "productos-21e47",
+    storageBucket: "productos-21e47.appspot.com",
+    messagingSenderId: "477903436340",
+    appId: "1:477903436340:web:6c87189d5474fc4defe861"
+  }*/
 };
 
 /*

@@ -1,0 +1,51 @@
+{
+  "productos" : {
+    "-MRcI5vXIbFaBgxtLu-A" : {
+      "Descripcion" : "sdgsd",
+      "Nombre" : "dsg",
+      "Precio" : 25,
+      "id" : 1
+    },
+    "-MRcMpLm-zl0spKazKHB" : {
+      "Descripcion" : "rwy",
+      "Nombre" : "wete",
+      "Precio" : 76586885885,
+      "id" : 1
+    },
+    "-MRcNslW5JaiyUtkpb42" : {
+      "Descripcion" : "garcia",
+      "Nombre" : "jordi",
+      "Precio" : 1981,
+      "id" : 1
+    },
+    "inmobiliaria" : {
+      "inmobiliaria1" : {
+        "Banyos" : 2,
+        "Descripcion" : "La Vega - Marenyet",
+        "Habitaciones" : 2,
+        "Localidad" : "Cullera",
+        "M2" : 80,
+        "Nombre" : "chalet adosado",
+        "Precio" : 187000
+      }
+    },
+    "motor" : {
+      "motor1" : {
+        "Descripcion" : "Supera el viento. Supera las barreras. Supera lo que no podías superar y sigue adelante. El nuevo compacto de la clase S es potencia radical para ir más allá de lo imposible. Con 228 kW (310 CV) de potencia, 400 Nm de par motor y una aceleración de 0 a 100 de tan solo 4,8 segundos, todo es posible al volante del Audi S3 Sportback",
+        "Nombre" : "Audi A3",
+        "Precio" : 28000,
+        "fecha" : "Sept 26, 20",
+        "km" : 0,
+        "tipo" : "coche"
+      }
+    },
+    "tecnologia" : {
+      "tecnologia1" : {
+        "Descripcion" : "cecotec",
+        "Estado" : "nuevo",
+        "Nombre" : "microondas",
+        "Precio" : 60
+      }
+    }
+  }
+}

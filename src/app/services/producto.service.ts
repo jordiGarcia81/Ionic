@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 
 import { Iproducto } from "../home/interfaces";
-import {IMotor} from "../home/interfaces";
+//import {IMotor} from "../home/interfaces";
 import {AngularFireDatabase} from '@angular/fire/database'
 
 @Injectable()

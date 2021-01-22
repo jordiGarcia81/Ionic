@@ -32,7 +32,7 @@ export class HomePage {
   localidad:string;
   estado:string;
   productos: (Iproducto | IMotor| IInmobiliaria| ITecnologia)[]=[];
-  //motor: ( Iproducto | IMotor| IInmobiliaria| ITecnologia)[]=[];
+  motor: ( Iproducto | IMotor| IInmobiliaria| ITecnologia)[]=[];
    /* {
       "id": 1,
       "Nombre": "iPhone 12 pro",
@@ -87,11 +87,14 @@ export class HomePage {
     
     }
   insertar(){
-    let productos : Iproducto=
+    let productos : IMotor=
       {"id":this.productos.length+1,
     "Nombre": this.nombre,
     "Descripcion": this.descripcion,
     "Precio":this.precio,
+    "Tipo":this.tipo,
+      "Km":this.km,
+      "Fecha":this.fecha
     
     };
    /* let motor: IMotor={
