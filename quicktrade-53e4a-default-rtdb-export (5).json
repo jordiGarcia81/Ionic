@@ -1,4 +1,25 @@
+
+
 {
+  "Mis_Ventas" : {
+    "producto1" : {
+      "descripcion" : "asus",
+      "estado" : "nuevo",
+      "id" : 1,
+      "nombre" : "ordenador",
+      "precio" : 600
+    },
+    "producto2" : {
+      "Banyos" : 3,
+      "Descripcion" : "amplio y en pleno centro de Valencia",
+      "Habitaciones" : 3,
+      "Id" : 2,
+      "Localidad" : "Valencia",
+      "M2" : 150,
+      "Nombre" : "piso centrico",
+      "Precio" : 350000
+    }
+  },
   "productos" : {
     "-MRcI5vXIbFaBgxtLu-A" : {
       "Descripcion" : "sdgsd",
@@ -16,6 +37,24 @@
       "Descripcion" : "garcia",
       "Nombre" : "jordi",
       "Precio" : 1981,
+      "id" : 1
+    },
+    "-MRcOMt6-T-vwf5CMtto" : {
+      "Descripcion" : "adios",
+      "Nombre" : "hola",
+      "Precio" : 14513,
+      "id" : 1
+    },
+    "-MRcP_JB82M0IzbZtv7b" : {
+      "Descripcion" : "ewt",
+      "Nombre" : "ewt",
+      "Precio" : 265222232,
+      "id" : 1
+    },
+    "-MRcVl0GFPE0Vj68gfPi" : {
+      "Descripcion" : "fff",
+      "Nombre" : "prueba",
+      "Precio" : 55555,
       "id" : 1
     },
     "inmobiliaria" : {
